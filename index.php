@@ -62,15 +62,7 @@
     <title>Formulaire</title>
 </head>
 <body>
-    <?php if(isset($_POST['submit']) ){
-        if(!empty($firstName) and !empty($lastName) and !empty($email)){
-        ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Envoyé avec succée
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-         </div>
-     <?php    
-    }}?>
+   
 
     <br>
     <br>
@@ -84,6 +76,14 @@
    
     <div class="container text-center">
     <form  method="POST" action="<?php $_SERVER['PHP_SELF']?>">
+    <?php if(!isset($_POST['submit']) ){
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Envoyé avec succée
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+         </div>
+     <?php    
+    }?>
         <label for="firstName">First Name: </label>
         <input class="form-control" type="text" name="firstName"id="firstName" value="<?php echo $firstName ?>" name="firstName" placeholder="First Name" />
         <div class="form-text error"><?php echo $errors['firstNameError'] ?></div>
