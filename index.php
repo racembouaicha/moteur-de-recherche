@@ -1,6 +1,6 @@
 <?php
 
-    $cnx = mysqli_connect('localhost','root','root','root','indexation');
+    $cnx = mysqli_connect('localhost','root','root','indexation');
     $firstName =  $_POST['firstName']  ?? '';
     $lastName =  $_POST['lastName']  ?? '';
     $email =  $_POST['email']  ?? '';
